@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 1999-2016. Parallels IP Holdings GmbH. -->
+<module>
+    <id>plan-items-example</id>
+    <name>Plan Items Example</name>
+    <description>Demonstrates how to register plan items.</description>
+    <version>1.0</version>
+    <release>1</release>
+    <vendor>Plesk</vendor>
+    <url>https://github.com/plesk/ext-plan-items</url>
+    <plesk_min_version>17.0.15</plesk_min_version>
+</module>
