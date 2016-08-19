@@ -1,5 +1,5 @@
 <?php
-// Copyright 1999-2016. Parallels IP Holdings GmbH. All Rights Reserved.
+// Copyright 1999-2016. Parallels IP Holdings GmbH.
 
 class Modules_PlanItemsExample_SimpleList extends pm_Hook_SimpleList
 {
@@ -13,11 +13,7 @@ class Modules_PlanItemsExample_SimpleList extends pm_Hook_SimpleList
 
     public function getData($controller, $action, $activeList, $data)
     {
-        $registeredItems = [
-            'starter' => 'Starter',
-            'lite' => 'Lite',
-            'premium' => 'Premium',
-        ];
+        $registeredItems = Modules_PlanItemsExample_Config::getPlanItems();
 
         foreach ($data as &$row) {
             $row['extPlanItemsExamplePlanItem'] = 'customer-service-plan' == $controller
