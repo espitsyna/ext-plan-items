@@ -47,8 +47,9 @@ class Modules_PlanItemsExample_SimpleList extends pm_Hook_SimpleList
         }
 
         $plan = new pm_Plan($data['id']);
+        $planItems = $plan->getPlanItems();
         return $this->_getLink(
-            ($planItem = reset($plan->getPlanItems())) ? $registeredItems[$planItem] : 'None',
+            ($planItem = reset($planItems)) ? $registeredItems[$planItem] : 'None',
             '/admin/customer-service-plan/edit/id/' . $plan->getId()
         );
     }
@@ -61,8 +62,9 @@ class Modules_PlanItemsExample_SimpleList extends pm_Hook_SimpleList
     private function _getBySubscription($data, $registeredItems)
     {
         $domain = new pm_Domain($data['id']);
+        $planItems = $domain->getPlanItems();
         return $this->_getLink(
-            ($planItem = reset($domain->getPlanItems())) ? $registeredItems[$planItem] : 'None',
+            ($planItem = reset($planItems)) ? $registeredItems[$planItem] : 'None',
             '/admin/subscription/edit/id/' . $domain->getId()
         );
     }
